@@ -38,6 +38,7 @@ public class SpotifyMusicHandler implements RequestHandler<Map<String,Object>, S
             return gson.toJson(spotifyTrack.toJson());
 
         } catch (Throwable e) {
+            e.printStackTrace();
             return gson.toJson(new ApiError(e.getMessage()));
         }
     }
