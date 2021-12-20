@@ -63,6 +63,8 @@ GET https://xxxx.amazonaws.com/song
 }
 ```
 
+GET https://xxxx.amazonaws.com/song?switch=next or switch=previous will switch songs.
+
 # Cleanup
 To delete the application, run `4-cleanup.sh`.
 
