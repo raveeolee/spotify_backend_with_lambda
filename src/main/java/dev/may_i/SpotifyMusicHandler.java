@@ -39,7 +39,7 @@ public class SpotifyMusicHandler implements RequestHandler<Map<String,Object>, S
 
         } catch (Throwable e) {
             e.printStackTrace();
-            return gson.toJson(new ApiError(e.getMessage()));
+            return gson.toJson(new ApiError("Something went wrong"));
         }
     }
 }
