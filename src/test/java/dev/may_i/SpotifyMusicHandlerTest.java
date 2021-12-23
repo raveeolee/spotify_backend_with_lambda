@@ -102,6 +102,6 @@ class SpotifyMusicHandlerTest {
                 .willThrow(new RuntimeException("Some Issue"));
 
         assertThat(musicHandler.handleRequest(Collections.emptyMap(), new TestContext()))
-                .isEqualTo("{\"error\":\"Something went wrong\"}");
+                .isEqualTo("{\"error\":\"Some Issue\"}");
     }
 }
