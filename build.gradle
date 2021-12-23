@@ -16,9 +16,9 @@ dependencies {
     implementation 'com.google.dagger:dagger:2.31'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.31'
 
-    testImplementation 'org.apache.logging.log4j:log4j-api:2.13.0'
-    testImplementation 'org.apache.logging.log4j:log4j-core:2.13.0'
-    testImplementation 'org.apache.logging.log4j:log4j-slf4j18-impl:2.13.0'
+    testImplementation 'org.apache.logging.log4j:log4j-api:2.15.0'
+    testImplementation 'org.apache.logging.log4j:log4j-core:2.15.0'
+    testImplementation 'org.apache.logging.log4j:log4j-slf4j18-impl:2.15.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testImplementation 'org.mockito:mockito-core:2.21.0'
     testImplementation 'org.mockito:mockito-junit-jupiter:2.21.0'
