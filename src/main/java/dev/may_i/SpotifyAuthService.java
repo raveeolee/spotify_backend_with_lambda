@@ -66,8 +66,7 @@ public class SpotifyAuthService {
                 .addEncoded("grant_type", "refresh_token")
                 .addEncoded("refresh_token", refreshToken)
                 .build();
-
-        return requestToken(credentials, body);
+        return new SpotifyToken(requestToken(credentials, body), refreshToken);
     }
 
     private SpotifyToken requestToken(UserCredentials credentials, RequestBody body) {

@@ -25,9 +25,17 @@ public class SpotifyToken {
     public SpotifyToken(SpotifyToken other, long expires_in) {
         this.access_token = other.access_token;
         this.token_type = other.token_type;
-        this.expires_in = expires_in;
         this.refresh_token = other.refresh_token;
+        this.expires_in = expires_in;
         this.scope = other.scope;
+    }
+
+    public SpotifyToken(SpotifyToken other, String refresh_token) {
+        this.access_token = other.access_token;
+        this.token_type = other.token_type;
+        this.expires_in = other.expires_in;
+        this.scope = other.scope;
+        this.refresh_token = refresh_token;
     }
 
     public String getAccess_token() {
