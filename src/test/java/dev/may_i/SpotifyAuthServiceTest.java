@@ -159,10 +159,12 @@ class SpotifyAuthServiceTest {
         given(dynamoDB.getTable("DDB_TABLE")).willReturn(table);
         given(requester.executeRequest(any(), any(), eq(SpotifyToken.class))).willReturn(token);
         tableConfigurationForClientIdAndCodePresent();
+        ArgumentCaptor<Item> itemArgumentCaptor = ArgumentCaptor.forClass(Item.class);
 
-        SpotifyAuthService service = spy(spotifyAuthService);
-        service.token(context, token);
-        verify(service).refreshToken(eq(context), eq(token));
+        spotifyAuthService.token(context, token);
+        verify(table).putItem(itemArgumentCaptor.capture());
+        Item value = itemArgumentCaptor.getValue();
+        assertThat(new SpotifyToken(value).getRefresh_token()).isNotNull();
     }
 
     private Item fakeItem() {
