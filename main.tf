@@ -44,7 +44,7 @@ resource "aws_lambda_function" "hello_world" {
   s3_bucket        = aws_s3_bucket.lambda_bucket.id
   s3_key           = aws_s3_object.lambda_hello_world.key
   runtime          = "java11"
-  handler          = "example.Handler"
+  handler          = "dev.may_i.Handler"
   source_code_hash = filebase64sha256("${path.module}/build/distributions/spotify_backend_with_lambda.zip")
   role             = aws_iam_role.lambda_exec.arn
 }
